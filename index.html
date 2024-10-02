@@ -1,45 +1,102 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-  <h1 align="center"> Girlfriend Application </h1>
+  <h1 align="center">Girlfriend Application</h1>
 
-  <h2 align="center"> Basic Information </h2>
-<div align="center">
-  <form action="/action_page.php">
+  <h2 align="center">Basic Information</h2>
+  <div align="center">
+    
     <label for="fullname">Name:</label>
-    <input type="text" id="fullname" name="fullname"><br><br>
-    
-    <label for="age">Age:</label>
+    <input type="text" id="fullname" name="fullname"> &nbsp;
+
+    <label for="age">Birthday:</label>
     <input type="text" id="age" name="age"><br><br>
-    
+
     <label for="hobbies">Hobbies:</label>
-    <input type="text" id="hobbies" name="hobbies"><br><br>
+    <input type="text" id="hobbies" name="hobbies"> &nbsp;
 
     <label for="favfood">Favorite Food:</label>
-    <input type="text" id="favfood" name="favfood"> <br><br>
+    <input type="text" id="favfood" name="favfood"><br><br>
+  </div>
 
+  <h2 align="center">Questionnaire</h2>
+  <div class="container">
+    <div class="column">
+      <label for="question1">What do you like about me?</label>
+      <input type="text" id="question1" name="question1">
 
+      <label for="question2">How would we spend our perfect Saturday together?</label>
+      <input type="text" id="question2" name="question2">
+
+      <label for="question3">What is your go-to strategy for cheering someone up after a long day?</label>
+      <input type="text" id="question3" name="question3">
+    </div>
     
-  </form>
-</div>
+    <div class="column">
+      <label for="question4">If you could describe our vibe, what would it be?</label>
+      <input type="text" id="question4" name="question4">
+
+      <label for="question5">What is your ideal first date?</label>
+      <input type="text" id="question5" name="question5">
+
+      <label for="question6">If we were starring in a movie together, what genre would it be and why?</label>
+      <input type="text" id="question6" name="question6">
+    </div>
+  </div>
+
+  <div align="center">
+    <h2>HR Questionnaire</h2>
+    <i>aka Emily the best friend! (the white sister)</i>
+  </div>
   
-<h2 align="center"> Questionnaire </h2>
+  <br><br>
+  
+  <div class="container">
+    <div class="column">
+      <label for="hrq1">Have you ever been convicted of a crime? Please explain below.</label>
+      <input type="text" id="hrq1" name="hrq1">
 
-<label for="question1"> What do you like about me? </label><br>
-<input type="text" style="width: 300px; height: 100px;" id="question1" name="question1"> <br><br>
+      <label for="hrq2">Do you use drugs recreationally outside of Weed, Tobacco, and vaping?</label>
+      <input type="text" id="hrq2" name="hrq2">
 
-<label for ="question2"> How would we spend out perfect Saturday together? </label> <br>
-<input type="text" style="width: 300px; height: 100px;" sizeid="question2" name="question2"> <br><br>
+      <label for="hrq3">Do you currently have hoes?</label>
+      <input type="text" id="hrq3" name="hrq3">
+    </div>
 
-<label for ="question3"> What is your go-to strategy for cheering someone up after a long day? </label> <br>
-<input type="text" style="width: 300px; height: 100px;" id="question3" name="question3"> <br><br>
+    <div class="column">
+      <label for="hrq4">Are there any long-standing situationships we need to be aware of?</label>
+      <input type="text" id="hrq4" name="hrq4">
 
-<label for ="question4"> If you could describe our vibe, what would it be? </label> <br>
-<input type="text" style="width: 300px; height: 100px;" id="question4" name="question4"> <br><br>
+      <label for="hrq5">Are there kids involved? If so, what do they enjoy doing?</label>
+      <input type="text" id="hrq5" name="hrq5">
 
-<label for ="question5"> What is your ideal first date? </label> <br>
-<input type="text" style="width: 300px; height: 100px;" id="question5" name="question5"> <br><br>
+      <label for="hrq6">Are there kids involved? If so, what do they enjoy doing?</label>
+      <input type="text" id="hrq6" name="hrq6">
+    </div>
 
+    <div class="column">
+      <label for="hrq7">Are you employed? If so, how long?</label>
+      <input type="text" id="hrq7" name="hrq7">
 
-<input type="submit" value="Submit">
+      <label for="hrq8">How is your relationship with your family?</label>
+      <input type="text" id="hrq8" name="hrq8">
+
+      <label for="hrq9">Are you looking for a long-term relationship or a fling?</label>
+      <input type="text" id="hrq9" name="hrq9">
+    </div>
+  </div>
+
+  <!-- Submit button at the bottom -->
+  <div class="submit-button">
+    <input type="submit" value="Submit" onclick="saveData()">
+  </div>
+
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
