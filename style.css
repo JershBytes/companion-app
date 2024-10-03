@@ -12,10 +12,15 @@
     margin-bottom: 5px;
   }
   
-  .column input[type="text"] {
-    width: 300px;
-    height: 100px;
-    margin-bottom: 20px;
+  .column textarea {
+    width: 300px;        /* Width of the textarea */
+    height: 100px;      /* Height of the textarea */
+    margin-bottom: 20px; /* Spacing below the textarea */
+    resize: none;       /* Prevents resizing of the textarea */
+    text-align: left;   /* Aligns text to the left */
+    padding: 5px;      /* Optional: Adds some padding for better text placement */
+    box-sizing: border-box; /* Ensures padding does not affect width */
+    overflow: auto;     /* Adds a scrollbar if needed */
   }
   
   .submit-button {

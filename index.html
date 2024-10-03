@@ -1,7 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <title> Who wants to date Josh?! </title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script><!-- Axios Library -->
+  <script src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+  <style>
+    body {
+        font-family: 'JetBrains Mono', monospace; /* Change to your selected font */
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .column {
+      margin: 10px;
+    }
+
+    .column label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .column textarea {
+      width: 300px;        /* Width of the textarea */
+      height: 100px;      /* Height of the textarea */
+      margin-bottom: 20px; /* Spacing below the textarea */
+      resize: none;       /* Prevents resizing of the textarea */
+      text-align: left;   /* Aligns text to the left */
+      padding: 5px;      /* Adds some padding */
+      box-sizing: border-box; /* Ensures padding does not affect width */
+      overflow: auto;     /* Adds a scrollbar if needed */
+    }
+
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      padding-top: 20px; /* Optional: Adds space between questions and the submit button */
+    }
+  </style>
 </head>
 <body>
 
@@ -27,24 +70,24 @@
   <div class="container">
     <div class="column">
       <label for="question1">What do you like about me?</label>
-      <input type="text" id="question1" name="question1">
+      <textarea id="question1" name="question1"></textarea>
 
       <label for="question2">How would we spend our perfect Saturday together?</label>
-      <input type="text" id="question2" name="question2">
+      <textarea id="question2" name="question2"></textarea>
 
       <label for="question3">What is your go-to strategy for cheering someone up after a long day?</label>
-      <input type="text" id="question3" name="question3">
+      <textarea id="question3" name="question3"></textarea>
     </div>
     
     <div class="column">
       <label for="question4">If you could describe our vibe, what would it be?</label>
-      <input type="text" id="question4" name="question4">
+      <textarea id="question4" name="question4"></textarea>
 
       <label for="question5">What is your ideal first date?</label>
-      <input type="text" id="question5" name="question5">
+      <textarea id="question5" name="question5"></textarea>
 
       <label for="question6">If we were starring in a movie together, what genre would it be and why?</label>
-      <input type="text" id="question6" name="question6">
+      <textarea id="question6" name="question6"></textarea>
     </div>
   </div>
 
@@ -58,35 +101,35 @@
   <div class="container">
     <div class="column">
       <label for="hrq1">Have you ever been convicted of a crime? Please explain below.</label>
-      <input type="text" id="hrq1" name="hrq1">
+      <textarea id="hrq1" name="hrq1"></textarea>
 
       <label for="hrq2">Do you use drugs recreationally outside of Weed, Tobacco, and vaping?</label>
-      <input type="text" id="hrq2" name="hrq2">
+      <textarea id="hrq2" name="hrq2"></textarea>
 
       <label for="hrq3">Do you currently have hoes?</label>
-      <input type="text" id="hrq3" name="hrq3">
+      <textarea id="hrq3" name="hrq3"></textarea>
     </div>
 
     <div class="column">
       <label for="hrq4">Are there any long-standing situationships we need to be aware of?</label>
-      <input type="text" id="hrq4" name="hrq4">
+      <textarea id="hrq4" name="hrq4"></textarea>
 
       <label for="hrq5">Are there kids involved? If so, what do they enjoy doing?</label>
-      <input type="text" id="hrq5" name="hrq5">
+      <textarea id="hrq5" name="hrq5"></textarea>
 
       <label for="hrq6">Are there kids involved? If so, what do they enjoy doing?</label>
-      <input type="text" id="hrq6" name="hrq6">
+      <textarea id="hrq6" name="hrq6"></textarea>
     </div>
 
     <div class="column">
       <label for="hrq7">Are you employed? If so, how long?</label>
-      <input type="text" id="hrq7" name="hrq7">
+      <textarea id="hrq7" name="hrq7"></textarea>
 
       <label for="hrq8">How is your relationship with your family?</label>
-      <input type="text" id="hrq8" name="hrq8">
+      <textarea id="hrq8" name="hrq8"></textarea>
 
       <label for="hrq9">Are you looking for a long-term relationship or a fling?</label>
-      <input type="text" id="hrq9" name="hrq9">
+      <textarea id="hrq9" name="hrq9"></textarea>
     </div>
   </div>
 
@@ -94,9 +137,6 @@
   <div class="submit-button">
     <input type="submit" value="Submit" onclick="saveData()">
   </div>
-
-    <!-- Link to external JavaScript file -->
-    <script src="script.js"></script>
 
 </body>
 </html>
