@@ -3,13 +3,13 @@
   <a href="" rel="noopener">
   <img width=200px height=200px src="https://tenor.com/belJO.gif" alt="homelab logo"></a>
 <div align="center">
-<i> A funny way to meet your next mate!</i>
+<i> A funny way to meet your next companion!</i>
 </div>
 </p>
 
 
 
-<h3 align="center"> The Girlfriend Application </h3>
+<h3 align="center"> The Companion App </h3>
 
 
 ## Why?
