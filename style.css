@@ -1,32 +1,31 @@
 .container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .column {
-    margin: 10px;
-  }
-  
-  .column label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .column textarea {
-    width: 300px;        /* Width of the textarea */
-    height: 100px;      /* Height of the textarea */
-    margin-bottom: 20px; /* Spacing below the textarea */
-    resize: none;       /* Prevents resizing of the textarea */
-    text-align: left;   /* Aligns text to the left */
-    padding: 5px;      /* Optional: Adds some padding for better text placement */
-    box-sizing: border-box; /* Ensures padding does not affect width */
-    overflow: auto;     /* Adds a scrollbar if needed */
-  }
-  
-  .submit-button {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    padding-top: 20px; /* Optional: Adds space between questions and the submit button */
-  }
-  
+      display: flex;
+      justify-content: center;
+    }
+
+    .column {
+      margin: 10px;
+    }
+
+    .column label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .column textarea {
+      width: 300px;        /* Width of the textarea */
+      height: 100px;      /* Height of the textarea */
+      margin-bottom: 20px; /* Spacing below the textarea */
+      resize: none;       /* Prevents resizing of the textarea */
+      text-align: left;   /* Aligns text to the left */
+      padding: 5px;      /* Adds some padding */
+      box-sizing: border-box; /* Ensures padding does not affect width */
+      overflow: auto;     /* Adds a scrollbar if needed */
+    }
+
+    .submit-button {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      padding-top: 20px; /* Optional: Adds space between questions and the submit button */
+    }
