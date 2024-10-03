@@ -3,47 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <title> Who wants to date Josh?! </title>
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
+ 
+  
+  <!-- Javascript -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script><!-- Axios Library -->
   <script src="script.js"></script>
+  
+  <!-- CDN'S -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
   <style>
-    body {
-        font-family: 'JetBrains Mono', monospace; /* Change to your selected font */
-    }
-    .container {
-      display: flex;
-      justify-content: center;
-    }
-
-    .column {
-      margin: 10px;
-    }
-
-    .column label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .column textarea {
-      width: 300px;        /* Width of the textarea */
-      height: 100px;      /* Height of the textarea */
-      margin-bottom: 20px; /* Spacing below the textarea */
-      resize: none;       /* Prevents resizing of the textarea */
-      text-align: left;   /* Aligns text to the left */
-      padding: 5px;      /* Adds some padding */
-      box-sizing: border-box; /* Ensures padding does not affect width */
-      overflow: auto;     /* Adds a scrollbar if needed */
-    }
-
-    .submit-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-      padding-top: 20px; /* Optional: Adds space between questions and the submit button */
-    }
+    body{
+        font-family: 'JetBrains Mono', monospace;} /* Change to your selected font */
+    
   </style>
 </head>
 <body>
@@ -57,39 +33,56 @@
     <input type="text" id="fullname" name="fullname"> &nbsp;
 
     <label for="age">Birthday:</label>
-    <input type="text" id="age" name="age"><br><br>
+    <input type="text" id="age" name="age">
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" name="email"><br><br> 
 
     <label for="hobbies">Hobbies:</label>
-    <input type="text" id="hobbies" name="hobbies"> &nbsp;
+    <input type="text" id="hobbies" name="hobbies"> 
 
     <label for="favfood">Favorite Food:</label>
-    <input type="text" id="favfood" name="favfood"><br><br>
+    <input type="text" id="favfood" name="favfood">
+
+  <br><br>
+    
   </div>
 
-  <h2 align="center">Questionnaire</h2>
+  <h2 align="center">Basic Questionnaire</h2>
+
+  <br><br>
+
+  
   <div class="container">
     <div class="column">
       <label for="question1">What do you like about me?</label>
       <textarea id="question1" name="question1"></textarea>
 
-      <label for="question2">How would we spend our perfect Saturday together?</label>
-      <textarea id="question2" name="question2"></textarea>
-
-      <label for="question3">What is your go-to strategy for cheering someone up after a long day?</label>
-      <textarea id="question3" name="question3"></textarea>
-    </div>
-    
-    <div class="column">
-      <label for="question4">If you could describe our vibe, what would it be?</label>
-      <textarea id="question4" name="question4"></textarea>
-
       <label for="question5">What is your ideal first date?</label>
       <textarea id="question5" name="question5"></textarea>
+  </div>
+    
+    <div class="column"> 
 
+      <label for="question2">How would we spend our perfect Saturday together?</label>
+      <textarea id="question2" name="question2"></textarea>
+      
+      <label for="question4">If you could describe our vibe, what would it be?</label>
+      <textarea id="question4" name="question4"></textarea>
+    </div>
+      
+    <div class="column"> 
+      
+      <label for="question3">What is your go-to strategy for cheering someone up after a long day?</label>
+      <textarea id="question3" name="question3"></textarea>
+      
+    
       <label for="question6">If we were starring in a movie together, what genre would it be and why?</label>
       <textarea id="question6" name="question6"></textarea>
+    
     </div>
   </div>
+    
 
   <div align="center">
     <h2>HR Questionnaire</h2>

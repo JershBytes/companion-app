@@ -1,6 +1,6 @@
 function saveData() {
   const formFields = [
-    'fullname', 'age', 'hobbies', 'favfood', 
+    'fullname', 'age', 'hobbies', 'favfood', 'email',
     'question1', 'question2', 'question3', 
     'question4', 'question5', 'question6',
     'hrq1', 'hrq2', 'hrq3', 'hrq4', 'hrq5', 
@@ -11,11 +11,12 @@ function saveData() {
   formFields.forEach(field => formData[field] = document.getElementById(field).value);
 
   const messageBody = `
-    New application received from ${formData.fullname}!
+    New application received from ${formData.fullname} at ${formData.email}!
 
     ### Basic Info ###
     Full Name: ${formData.fullname}
     Birthday: ${formData.age}
+    Email: ${formData.email}
     Hobbies: ${formData.hobbies}
     Favorite Food: ${formData.favfood}
 
