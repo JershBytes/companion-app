@@ -1,7 +1,12 @@
-> [!CAUTION]
-> This is still a WIP. Since I'm new to javascript.
->
+<div align="center">
+  <div style="border: 1px solid red; background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 5px; display: inline-block;">
+    <strong>CAUTION:</strong> This is still a WIP. Since I'm new to JavaScript.
+  </div>
 
+  <br>
+  <br>
+
+</div>
 <!-- Header -->
 <p align="center">
   <a href="" rel="noopener">
@@ -13,9 +18,9 @@
 <div align="center">
 
   [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-  [![License](https://img.shields.io/badge/license-MIT-pink.svg)](/LICENSE)
-  <!-- [![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls) -->
+  [![GitHub Issues](https://img.shields.io/github/issues/JershBytes/companion-app.svg)](https://github.com/JershBytes/companion-app/issues)
+  [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/JershBytes/companion-app.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)<br>
+   [![License](https://img.shields.io/badge/license-MIT-pink.svg)](/LICENSE)
 
 </div>
 
