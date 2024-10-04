@@ -1,7 +1,7 @@
 {
   "name": "companion-app",
   "version": "1.0.0",
-  "description": "<div align=\"center\">   <div style=\"border: 1px solid red; background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 5px; display: inline-block;\">     <strong>CAUTION:</strong> This is still a WIP. Since I'm new to JavaScript.   </div>",
+  "description": "A funny way to meet your next companion!",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/JershBytes/companion-app#readme",
   "dependencies": {
+    "dotenv": "^16.4.5",
     "express": "^4.21.0",
     "nodemailer": "^6.9.15"
   },
