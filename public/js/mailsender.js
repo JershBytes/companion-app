@@ -34,7 +34,7 @@ Additional Comments: ${formData.hrq9}<br>
 `;
 
 // Array of recipient emails
-const emails = ['contact@rossjm.net'];
+const emails = [''];
 
 async function main(formData) {
   // Create transporter with environment variables

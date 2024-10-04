@@ -27,6 +27,10 @@
 <h2> 📝 Table of Contents </h2>
 
 + [🧐 About ](#-about-)
++ [🏁 Getting Started ](#-getting-started-)
+  + [Prerequisites](#prerequisites)
+  + [Installing](#installing)
++ [🚀 Deployment ](#-deployment-)
 + [⛏️ Built Using ](#️-built-using-)
 + [✍️ Authors ](#️-authors-)
 + [🎉 Inspiration ](#-inspiration-)
@@ -37,6 +41,65 @@
 ## 🧐 About <a name = "about"></a>
 
 A friend of mine, made a joke about making a dating application form. Because of my bad luck with choosing woman. So I thought why the heck don't I make one. This project is simple and uses just basic front end HTML and CSS with some JavaScript to send a push notification. When someone Clicks submit.
+
+## 🏁 Getting Started <a name = "getting_started"></a>
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+- Node.js
+  - express
+  - nodemailer
+  - dotenv
+  - nodemon ( for tests)
+
+### Installing
+
+- Clone the repo.
+
+```shell
+git clone https://github.com/JershBytes/companion-app.git
+```
+
+- Install the dependencies
+
+```shell
+npm -i express nodemailer dotenv
+
+npm -i -D nodemon
+```
+- Create the `.env` file.
+```shell
+# This should be in the root of the project
+touch .env
+```
+
+- Add These Variables to the `.env` file
+```
+pushoverUserKEy=
+pushoverToken=
+EMAIL_USER=
+EMAIL_PASS=
+EMAIL_HOST=
+EMAIL_PORT=
+```
+- Also add the emails you want the form to be sent to
+
+```js
+// This is found in /public/js/mailsender.js
+// Array of recipient emails
+const emails = [''];
+```
+
+## 🚀 Deployment <a name = "deployment"></a>
+
+Afer all is done in the last step. You can test with
+
+```shell
+npm dev server.js
+```
+Fill out some infomation abd hit submit and it should send a push notification and email.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Express](https://expressjs.com/) - Server Framework
