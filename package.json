@@ -1,0 +1,28 @@
+{
+  "name": "companion-app",
+  "version": "1.0.0",
+  "description": "<div align=\"center\">   <div style=\"border: 1px solid red; background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 5px; display: inline-block;\">     <strong>CAUTION:</strong> This is still a WIP. Since I'm new to JavaScript.   </div>",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JershBytes/companion-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JershBytes/companion-app/issues"
+  },
+  "homepage": "https://github.com/JershBytes/companion-app#readme",
+  "dependencies": {
+    "express": "^4.21.0",
+    "nodemailer": "^6.9.15"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
