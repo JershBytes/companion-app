@@ -2,95 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Who wants to date Me?!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who wants to date?!</title>
   <link rel="icon" type="image/png" href="/assets/heart.png">
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
 
-  <!-- Javascript Libraries -->
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script><!-- Axios Library -->
-  <script src="./js/pushover.js"></script>
-  <script src="./js/mailsender.js"></script>
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./css/styles.css">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-        font-family: 'JetBrains Mono', monospace;
-    }
-
-    .tab-container {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
-
-    .tab {
-        padding: 10px 20px;
-        margin: 0 5px;
-        cursor: pointer;
-        background-color: #f0f0f0;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-    }
-
-    .tab.active {
-        background-color: #ff6b6b;
-        color: white;
-        border: 1px solid #ff4c4c;
-    }
-
-    .form-section {
-        display: none;
-    }
-
-    .form-section.active {
-        display: block;
-    }
-
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        margin: 20px;
-    }
-
-    .column {
-        margin: 10px;
-        padding: 15px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-    }
-
-    .submit-button {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .submit-button button {
-        padding: 10px 20px;
-        border: none;
-        background-color: #ff6b6b;
-        color: white;
-        border-radius: 8px;
-        cursor: pointer;
-        font-size: 18px;
-    }
-
-    .submit-button button:hover {
-        background-color: #ff4c4c;
-    }
-  </style>
 </head>
 <body>
 
-  <h1 align="center">Companion Application</h1>
+  <!-- Header Section -->
+  <header class="header">
+    <h1>Companion Application ❤️ </h1>
+  </header>
 
   <!-- Tab Navigation -->
   <div class="tab-container">
@@ -100,7 +33,7 @@
   </div>
 
   <!-- Form Sections -->
-  <form class="nice-form">
+  <form class="nice-form form-container">
     <!-- Basic Information Section -->
     <div class="form-section active" id="basic-info">
       <h2 align="center">Basic Information</h2>
@@ -133,26 +66,42 @@
     <!-- Basic Questionnaire Section -->
     <div class="form-section" id="questionnaire">
       <h2 align="center">Basic Questionnaire</h2>
+
       <div class="form-field">
         <label for="question1">What do you like about me?</label>
         <textarea id="question1" name="question1" class="nice-textarea"></textarea>
       </div>
 
       <div class="form-field">
-        <label for="question2">How would we spend our perfect Saturday together?</label>
+        <label for="question2">What is your ideal first date?</label>
         <textarea id="question2" name="question2" class="nice-textarea"></textarea>
       </div>
 
       <div class="form-field">
-        <label for="question3">What is your go-to strategy for cheering someone up after a long day?</label>
+        <label for="question3">How would we spend our perfect Saturday together?</label>
         <textarea id="question3" name="question3" class="nice-textarea"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="question4">If you could describe our vibe, what would it be?</label>
+        <textarea id="question4" name="question4" class="nice-textarea"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="question5">What is your go-to strategy for cheering someone up after a long day?</label>
+        <textarea id="question5" name="question5" class="nice-textarea"></textarea>
+      </div>
+
+      <div class="form-field">
+        <label for="question6">If we were starring in a movie together, what genre would it be and why?</label>
+        <textarea id="question6" name="question6" class="nice-textarea"></textarea>
       </div>
     </div>
 
     <!-- HR Questionnaire Section -->
     <div class="form-section" id="hr-questionnaire">
-      <h2 align="center">HR Questionnaire</h2>
-      <i>aka My Friends!</i>
+      <h2 align="center"> HR Questionnaire</h2>
+      <div align="center"><i> aka my friends!</i></div><br>
       <div class="form-field">
         <label for="hrq1">Have you ever been convicted of a crime? Please explain below.</label>
         <textarea id="hrq1" name="hrq1" class="nice-textarea"></textarea>
@@ -171,25 +120,20 @@
   </form>
 
   <!-- Submit Button -->
-  <div class="submit-button">
-    <button type="submit">
+  <footer class="footer">
+    <div class="submit-button">
+      <button type="submit">
         <i class="fas fa-envelope"></i> Submit
-    </button>
-  </div>
+      </button>
+    </div>
+  </footer>
 
-  <script>
-    // JavaScript for Tab Functionality
-    document.querySelectorAll('.tab').forEach(tab => {
-      tab.addEventListener('click', function() {
-        // Remove active class from all tabs and sections
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.form-section').forEach(section => section.classList.remove('active'));
+  <!-- External JavaScript -->
+  <script src="./js/pushover.js"></script>
+  <script src="./js/mailsender.js"></script>
+  <script src="./js/tab.js"></script>
+  <script src="./js/config.js"></script>
 
-        // Add active class to the clicked tab and corresponding section
-        tab.classList.add('active');
-        document.getElementById(tab.getAttribute('data-tab')).classList.add('active');
-      });
-    });
-  </script>
+
 </body>
 </html>

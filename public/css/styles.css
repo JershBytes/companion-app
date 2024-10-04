@@ -1,0 +1,113 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'JetBrains Mono', monospace;
+  height: 100%; /* Ensure body takes full height for proper positioning */
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #bd93f9;
+  color: white;
+}
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.tab.active {
+  background-color: #ff79c6;
+  color: white;
+  border: 1px solid #ff4c4c;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.form-section {
+  display: none;
+  width: 50%;
+  margin: auto;
+}
+
+.form-section.active {
+  display: block;
+}
+
+.form-field {
+  margin-bottom: 15px;
+}
+
+.nice-input, .nice-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Add padding at the bottom of the form container */
+.form-container {
+  padding-bottom: 80px; /* Adjust this value to fit your layout */
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #bd93f9;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button button {
+  padding: 10px 20px;
+  border: none;
+  background-color: white;
+  color: #ff6b6b;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.submit-button button:hover {
+  background-color: #ff4c4c;
+  color: white;
+}
+
+html, body {
+  height: 100%; /* Ensures the body takes full height */
+}
+
+.form-container {
+  max-height: calc(100% - 100px); /* Adjust this value according to your footer height */
+  overflow-y: auto; /* Enables scrolling if the content exceeds the maximum height */
+}
