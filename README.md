@@ -65,9 +65,9 @@ git clone https://github.com/JershBytes/companion-app.git
 - Install the dependencies
 
 ```shell
-npm -i express nodemailer dotenv
+npm i express nodemailer dotenv
 
-npm -i -D nodemon
+npm i -D nodemon
 ```
 - Create the `.env` file.
 ```shell
@@ -97,7 +97,7 @@ const emails = [''];
 Afer all is done in the last step. You can test with
 
 ```shell
-npm dev server.js
+npm run dev server.js
 ```
 Fill out some infomation and hit submit and it should send a push notification and email.
 
