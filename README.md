@@ -65,9 +65,7 @@ git clone https://github.com/JershBytes/companion-app.git
 - Install the dependencies
 
 ```shell
-npm i express nodemailer dotenv
-
-npm i -D nodemon
+npm i
 ```
 - Create the `.env` file.
 ```shell
