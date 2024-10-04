@@ -99,7 +99,7 @@ Afer all is done in the last step. You can test with
 ```shell
 npm dev server.js
 ```
-Fill out some infomation abd hit submit and it should send a push notification and email.
+Fill out some infomation and hit submit and it should send a push notification and email.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Express](https://expressjs.com/) - Server Framework
