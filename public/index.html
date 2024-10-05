@@ -156,7 +156,7 @@
   <!-- Submit Button -->
   <footer class="footer">
     <div class="submit-button">
-      <button type="button" onclick="saveData()">
+      <button type="button" onclick="import('./js/pushover.js').then(module => module.saveData())">        
         <i class="fas fa-envelope"></i> Submit
       </button>
     </div>
