@@ -79,13 +79,11 @@ pushoverUserKEy=
 pushoverToken=
 EMAIL_USER=
 EMAIL_PASS=
-EMAIL_HOST=
-EMAIL_PORT=
 ```
 - Also add the emails you want the form to be sent to
 
 ```js
-// This is found in /public/js/mailsender.js
+// This is found in /public/js/mailer.js
 // Array of recipient emails
 const emails = [''];
 ```
