@@ -24,7 +24,7 @@ export const notifyFromForm = (formData) => {
 
   // Create a formatted message
   const message = `
-    New Submission from *${fullname}* at ${email}:
+    New Submission from *${fullname}* at ${email}
     *Age*: ${age}
     *Email*: ${email}
     *Hobbies*: ${hobbies}
