@@ -68,7 +68,7 @@ export const notifyFromForm = (formData) => {
     `;
 
     // Multiple recipients can be handled with an array of emails
-    const recipients = ['contact@rossjm.net', 'me@rossjm.net']; // Add more emails as needed
+    const recipients = ['', '']; // Add more emails as needed
     const subject = `New Submission from ${fullname} at ${email}`;
     
     // Send the email to all recipients
