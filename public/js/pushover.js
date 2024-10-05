@@ -1,4 +1,9 @@
-function saveData() {
+// pushover.js
+
+import config from './config.js'; // Import the configuration
+import axios from 'axios'; // Import axios
+
+export function saveData() {
   const formFields = [
     'fullname', 'age', 'hobbies', 'favfood', 'email',
     'question1', 'question2', 'question3',
@@ -8,7 +13,9 @@ function saveData() {
   ];
 
   const formData = {};
-  formFields.forEach(field => formData[field] = document.getElementById(field).value);
+  formFields.forEach(field => {
+    formData[field] = document.getElementById(field).value;
+  });
 
   const messageBody = `
     New application received from ${formData.fullname} at ${formData.email}!
@@ -41,37 +48,33 @@ function saveData() {
     Additional Comments: ${formData.hrq9}
   `;
 
-// Import the configuration
-const config = require('./config'); // Adjust the path as needed
-const axios = require('axios'); // Ensure you have axios imported
+  // Send to Pushover
+  const userKey = config.pushoverUserKey;  // Use the user key from config
+  const apiToken = config.pushoverToken;    // Use the token from config
 
-// Send to Pushover
-const userKey = config.pushoverUserKey;  // Use the user key from config
-const apiToken = config.pushoverToken;    // Use the token from config
+  const bodyFormDataPushover = new URLSearchParams();
+  bodyFormDataPushover.append('token', apiToken);
+  bodyFormDataPushover.append('user', userKey);
+  bodyFormDataPushover.append('message', messageBody); // Ensure messageBody is defined
 
-const bodyFormDataPushover = new URLSearchParams();
-bodyFormDataPushover.append('token', apiToken);
-bodyFormDataPushover.append('user', userKey);
-bodyFormDataPushover.append('message', messageBody); // Ensure messageBody is defined
+  const urlPushover = "https://api.pushover.net/1/messages.json";
 
-const urlPushover = "https://api.pushover.net/1/messages.json";
-
-axios({
-    method: "post",
-    url: urlPushover,
-    data: bodyFormDataPushover.toString(),
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded" // Pushover needs this content type
-    }
-})
-.then((response) => console.log("Pushover notification sent successfully!", response.data))
-.catch((error) => {
-    if (error.response) {
-        console.error("Pushover Error response:", error.response.data);
-    } else if (error.request) {
-        console.error("Pushover Error request:", error.request);
-    } else {
-        console.error("Pushover General error:", error.message);
-    }
-});
+  axios({
+      method: "post",
+      url: urlPushover,
+      data: bodyFormDataPushover.toString(),
+      headers: {
+          "Content-Type": "application/x-www-form-urlencoded" // Pushover needs this content type
+      }
+  })
+  .then((response) => console.log("Pushover notification sent successfully!", response.data))
+  .catch((error) => {
+      if (error.response) {
+          console.error("Pushover Error response:", error.response.data);
+      } else if (error.request) {
+          console.error("Pushover Error request:", error.request);
+      } else {
+          console.error("Pushover General error:", error.message);
+      }
+  });
 }
