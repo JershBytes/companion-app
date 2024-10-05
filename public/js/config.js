@@ -1,5 +1,7 @@
+import dotenv from 'dotenv';
 
-require('dotenv').config();
+dotenv.config();
+
 
 const config = {
     pushoverToken: process.env.PUSHOVER_TOKEN,
