@@ -38,7 +38,7 @@ document.getElementById('submit-button').addEventListener('click', async () => {
   try {
     const response = await axios.post('/notify', formData);
     console.log('Notification sent:', response.data);
-    alert('Your responses have been submitted successfully!');
+    alert('Your responses have been submitted successfully! We will get back to you soon!');
   } catch (error) {
     console.error('Error sending notification:', error);
     alert('There was an error submitting your responses.');
