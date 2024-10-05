@@ -1,4 +1,4 @@
-// config.js
+
 require('dotenv').config();
 
 const config = {

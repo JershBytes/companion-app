@@ -4,14 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who wants to date?!</title>
-  <link rel="icon" type="image/png" href="/assets/heart.png">
+  <link rel="icon" type="image/png" href="./heart.png">
 
-  <!-- CSS Libraries -->
+  <!-- CSS Libraries  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/nice-forms.css@0.1.7/dist/nice-forms.css" />
-
-  <!-- External CSS -->
   <link rel="stylesheet" href="./css/styles.css">
+ 
+<!--  JS Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +31,7 @@
   <div class="tab-container">
     <div class="tab active" data-tab="basic-info">Basic Information</div>
     <div class="tab" data-tab="questionnaire">Basic Questionnaire</div>
-    <div class="tab" data-tab="hr-questionnaire">HR Questionnaire</div>
+    <div class="tab" data-tab="bg-check">Background Check</div>
   </div>
 
   <!-- Form Sections -->
@@ -98,10 +100,10 @@
       </div>
     </div>
 
-    <!-- HR Questionnaire Section -->
-    <div class="form-section" id="hr-questionnaire">
-      <h2 align="center"> HR Questionnaire</h2>
-      <div align="center"><i> aka my friends!</i></div><br>
+    <!-- Backgorund Check Section -->
+    <div class="form-section" id="bg-check">
+      <h2 align="center">Background Check</h2>
+      
       <div class="form-field">
         <label for="hrq1">Have you ever been convicted of a crime? Please explain below.</label>
         <textarea id="hrq1" name="hrq1" class="nice-textarea"></textarea>
@@ -115,6 +117,38 @@
       <div class="form-field">
         <label for="hrq3">Do you currently have hoes?</label>
         <textarea id="hrq3" name="hrq3" class="nice-textarea"></textarea>
+        
+        <div class="form-field">
+          <label for="hrq4">Are there any long-standing situationships we need to be aware of?</label>
+          <textarea id="hrq4" name="hrq4" class="nice-textarea"></textarea>
+        </div>
+        
+        <div class="form-field">
+          <label for="hrq5">Are there kids involved? If so, what do they enjoy doing?</label>
+          <textarea id="hrq5" name="hrq5" class="nice-textarea"></textarea>
+        </div>
+        
+        <div class="form-field">
+          <label for="hrq6">Are you employed? If so, how long?</label>
+          <textarea id="hrq6" name="hrq6" class="nice-textarea"></textarea>
+        </div>
+        
+        <div class="form-field">
+          <label for="hrq7">How is your relationship with your family?</label>
+          <textarea id="hrq7" name="hrq7" class="nice-textarea"></textarea>
+        </div>
+        
+        <div class="form-field">
+          <label for="hrq8">Are you looking for a long-term relationship or a fling?</label>
+          <textarea id="hrq8" name="hrq8" class="nice-textarea"></textarea>
+        </div>
+        
+        <div class="form-field">
+          <label for="hrq9">How are your feeling are guy/girl relationships?</label>
+          <textarea id="hrq9" name="hrq9" class="nice-textarea"></textarea>
+        </div>
+
+      
       </div>
     </div>
   </form>
@@ -122,17 +156,17 @@
   <!-- Submit Button -->
   <footer class="footer">
     <div class="submit-button">
-      <button type="submit">
+      <button type="button" onclick="saveData()">
         <i class="fas fa-envelope"></i> Submit
       </button>
     </div>
   </footer>
 
   <!-- External JavaScript -->
-  <script src="./js/pushover.js"></script>
-  <script src="./js/mailsender.js"></script>
-  <script src="./js/tab.js"></script>
   <script src="./js/config.js"></script>
+  <script src="./js/tab.js"></script>
+  <script src="./js/pushover.js"></script>
+  
 
 
 </body>
