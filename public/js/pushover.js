@@ -1,77 +1,56 @@
-function saveData() {
-  const formFields = [
-    'fullname', 'age', 'hobbies', 'favfood', 'email',
-    'question1', 'question2', 'question3',
-    'question4', 'question5', 'question6',
-    'hrq1', 'hrq2', 'hrq3', 'hrq4', 'hrq5',
-    'hrq6', 'hrq7', 'hrq8', 'hrq9'
-  ];
+import axios from 'axios';
+import dotenv from 'dotenv';
 
-  const formData = {};
-  formFields.forEach(field => formData[field] = document.getElementById(field).value);
+dotenv.config();
 
-  const messageBody = `
-    New application received from ${formData.fullname} at ${formData.email}!
+const pushoverUrl = 'https://api.pushover.net/1/messages.json';
 
-    ### Basic Info ###
-    Full Name: ${formData.fullname}
-    Birthday: ${formData.age}
-    Email: ${formData.email}
-    Hobbies: ${formData.hobbies}
-    Favorite Food: ${formData.favfood}
+export const sendPushoverNotification = async (message) => {
+  try {
+    const response = await axios.post(pushoverUrl, {
+      token: process.env.PUSHOVER_API_TOKEN,
+      user: process.env.PUSHOVER_USER_KEY,
+      message: message,
+    });
 
-    ### Questionnaire ###
-    What do you like about me?: ${formData.question1}
-    Perfect Saturday: ${formData.question2}
-    Cheer-up Strategy: ${formData.question3}
-    Vibe Description: ${formData.question4}
-    Ideal First Date: ${formData.question5}
-    Movie Genre: ${formData.question6}
+    console.log('Pushover Notification Sent:', response.data);
+  } catch (error) {
+    console.error('Error sending Pushover notification:', error);
+  }
+};
 
-    ### HR Questionnaire ###
-    HR Questions:
-    Crime Conviction: ${formData.hrq1}
-    Drug Use: ${formData.hrq2}
-    Current Relationships: ${formData.hrq3}
-    Situationships: ${formData.hrq4}
-    Kids' Activities: ${formData.hrq5}
-    Employment Status: ${formData.hrq6}
-    Family Relationship: ${formData.hrq7}
-    Relationship Type: ${formData.hrq8}
-    Additional Comments: ${formData.hrq9}
+export const notifyFromForm = (formData) => {
+  const { fullname, age, email, hobbies, favfood, ...questions } = formData;
+
+  // Create a formatted message
+  const message = `
+    New Submission from *${fullname}* at ${email}
+    *Age*: ${age}
+    *Email*: ${email}
+    *Hobbies*: ${hobbies}
+    *Favorite Food*: ${favfood}
+
+    *Responses:*
+    - Like About me: ${questions.question1}
+    - Ideal first date: ${questions.question2}
+    - Perfect Saturday: ${questions.question3}
+    - Describe our vibe: ${questions.question4}
+    - Cheer up strategy: ${questions.question5}
+    - Movie genre: ${questions.question6}
+
+    *Background Check Responses:*
+    - Criminal conviction: ${questions.hrq1}
+    - Recreational drugs: ${questions.hrq2}
+    - Current partners: ${questions.hrq3}
+    - Situationships: ${questions.hrq4}
+    - Kids involved: ${questions.hrq5}
+    - Employment status: ${questions.hrq6}
+    - Family relationships: ${questions.hrq7}
+    - Long-term relationship or fling: ${questions.hrq8}
+    - Feelings about guy/girl relationships: ${questions.hrq9}
   `;
 
-// Import the configuration
-const config = require('./config'); // Adjust the path as needed
-const axios = require('axios'); // Ensure you have axios imported
 
-// Send to Pushover
-const userKey = config.pushoverUserKey;  // Use the user key from config
-const apiToken = config.pushoverToken;    // Use the token from config
-
-const bodyFormDataPushover = new URLSearchParams();
-bodyFormDataPushover.append('token', apiToken);
-bodyFormDataPushover.append('user', userKey);
-bodyFormDataPushover.append('message', messageBody); // Ensure messageBody is defined
-
-const urlPushover = "https://api.pushover.net/1/messages.json";
-
-axios({
-    method: "post",
-    url: urlPushover,
-    data: bodyFormDataPushover.toString(),
-    headers: {
-        "Content-Type": "application/x-www-form-urlencoded" // Pushover needs this content type
-    }
-})
-.then((response) => console.log("Pushover notification sent successfully!", response.data))
-.catch((error) => {
-    if (error.response) {
-        console.error("Pushover Error response:", error.response.data);
-    } else if (error.request) {
-        console.error("Pushover Error request:", error.request);
-    } else {
-        console.error("Pushover General error:", error.message);
-    }
-});
-}
+  // Send the formatted message to Pushover
+  sendPushoverNotification(message);
+};
