@@ -1,8 +1,9 @@
+/* Base styles (unchanged) */
 body, html {
   margin: 0;
   padding: 0;
   font-family: 'JetBrains Mono', monospace;
-  height: 100%; /* Ensure body takes full height for proper positioning */
+  height: 100%;
 }
 
 .header {
@@ -42,7 +43,8 @@ body, html {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  margin: 20px;
+  margin: auto;
+  padding-bottom: 80px;
 }
 
 .form-section {
@@ -65,11 +67,6 @@ body, html {
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
-}
-
-/* Add padding at the bottom of the form container */
-.form-container {
-  padding-bottom: 80px; /* Adjust this value to fit your layout */
 }
 
 .footer {
@@ -103,11 +100,36 @@ body, html {
   color: white;
 }
 
-html, body {
-  height: 100%; /* Ensures the body takes full height */
-}
+/* Media queries for small screens */
+@media (max-width: 600px) {
+  .form-section {
+    width: 100%; /* Full width on mobile */
+    margin: 0 10px;
+  }
 
-.form-container {
-  max-height: calc(100% - 100px); /* Adjust this value according to your footer height */
-  overflow-y: auto; /* Enables scrolling if the content exceeds the maximum height */
+  .tab-container {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  .tab {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .submit-button button {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .header, .footer {
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  .footer {
+    position: static; /* Remove fixed position to avoid issues on mobile */
+    margin-top: 20px;
+  }
 }
