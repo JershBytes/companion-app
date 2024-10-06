@@ -1,12 +1,3 @@
-<div align="center">
-  <div style="border: 1px solid red; background-color: #fff3cd; color: #856404; padding: 10px; border-radius: 5px; display: inline-block;">
-    <strong>CAUTION:</strong> This is still a WIP. Since I'm new to JavaScript.
-  </div>
-
-  <br>
-  <br>
-
-</div>
 <!-- Header -->
 <p align="center">
   <a href="" rel="noopener">
