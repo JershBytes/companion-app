@@ -15,6 +15,43 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+// Function to calculate age from date of birth in MM-DD-YYYY or MMDDYYYY format
+const calculateAge = (dob) => {
+    let month, day, year;
+
+    // Check if the input is in MM-DD-YYYY format
+    if (dob.includes('-')) {
+        const parts = dob.split('-');
+        if (parts.length === 3) {
+            month = parseInt(parts[0], 10) - 1; // Month is 0-indexed
+            day = parseInt(parts[1], 10);
+            year = parseInt(parts[2], 10);
+        } else {
+            console.error('Invalid date format. Please use MM-DD-YYYY or MMDDYYYY.');
+            return null; // or handle as appropriate
+        }
+    } else {
+        // Assume MMDDYYYY format
+        month = parseInt(dob.substring(0, 2), 10) - 1; // Month is 0-indexed
+        day = parseInt(dob.substring(2, 4), 10);
+        year = parseInt(dob.substring(4, 8), 10);
+    }
+
+    const birthDate = new Date(year, month, day);
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+
+    // Adjust age if the birthday hasn't occurred yet this year
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    return age;
+};
+
+
 // Function to send an email to multiple recipients
 export const sendMail = async (to, subject, text, html) => { // Accept an `html` parameter
     const mailOptions = {
@@ -37,10 +74,13 @@ export const sendMail = async (to, subject, text, html) => { // Accept an `html`
 export const notifyFromForm = (formData) => {
     const { fullname, age, email, hobbies, favfood, ...questions } = formData;
 
+     // Calculate the real age from the age input
+    const realAge = calculateAge(age); // Use the calculateAge function
+
     // Create a formatted HTML message
     const messageHtml = `
         <h1>New Submission from <strong>${fullname}</strong> at ${email}</h1>
-        <p><strong>Age:</strong> ${age}</p>
+        <p><strong>Age:</strong> ${realAge !== null ? realAge : 'Invalid date format'}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Hobbies:</strong> ${hobbies}</p>
         <p><strong>Favorite Food:</strong> ${favfood}</p>
