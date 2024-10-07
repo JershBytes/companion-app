@@ -68,7 +68,7 @@ export const notifyFromForm = (formData) => {
     `;
 
     // Multiple recipients can be handled with an array of emails
-    const recipients = ['', '']; // Add more emails as needed
+    const recipients = process.env.RECIPIENTS.split(',');
     const subject = `New Submission from ${fullname} at ${email}`;
     
     // Send the email to all recipients with the HTML version of the message
