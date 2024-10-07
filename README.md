@@ -65,18 +65,13 @@ touch .env
 ```
 
 - Add These Variables to the `.env` file
-```
+
+```dotenv title=".env"
 pushoverUserKEy=
 pushoverToken=
 EMAIL_USER=
 EMAIL_PASS=
-```
-- Also add the emails you want the form to be sent to
-
-```js
-// This is found in /public/js/mailer.js
-// Array of recipient emails
-const emails = [''];
+RECIPIENTS=     # Make sure to add a `,` between the emails.
 ```
 
 ## 🚀 Deployment <a name = "deployment"></a>
