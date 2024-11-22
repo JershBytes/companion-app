@@ -1,6 +1,6 @@
 import express from 'express';
 import { notifyFromForm as notifyEmail } from './public/js/mailer.js'; // Import the notification function from mailer.js
-import { notifyFromForm as notifyPushover } from './public/js/pushover.js'; // Import the notification function from pushover.js
+import { notifyFromForm as notifyGotify } from './public/js/gotify.js'; // Import the notification function from pushover.js
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -17,7 +17,7 @@ app.post('/submit', (req, res) => {
   notifyEmail(formData);
 
   // Trigger Pushover notification
-  notifyPushover(formData);
+  notifyGotify(formData);
 
   // Respond to the frontend
   res.json({ message: 'Notifications sent successfully!' });
@@ -31,7 +31,7 @@ app.post('/notify', (req, res) => {
   // Call the notification functions
   Promise.all([
     notifyEmail(notificationData),
-    notifyPushover(notificationData)
+    notifyGotify(notificationData)
   ])
     .then(responses => {
       res.status(200).json({ message: 'Notifications sent successfully', responses });

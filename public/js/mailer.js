@@ -5,13 +5,16 @@ dotenv.config(); // Load environment variables
 
 // Set up the transporter
 const transporter = nodemailer.createTransport({
-    service: 'Gmail',
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true,
+    host: process.env.PROTON_SMTP_SERVER,
+    port: process.env.PROTON_SMTP_PORT,
+    secure: false, // true for 465, false for other ports
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: process.env.PROTON_SMTP_USER,
+      pass: process.env.PROTON_SMTP_TOKEN
+    },
+    tls: {
+        ciphers: 'SSLv3',
+        rejectUnauthorized: true,
     }
 });
 
@@ -55,7 +58,7 @@ const calculateAge = (dob) => {
 // Function to send an email to multiple recipients
 export const sendMail = async (to, subject, text, html) => { // Accept an `html` parameter
     const mailOptions = {
-        from: process.env.EMAIL_USER,
+        from: process.env.PROTON_SMTP_USER, // Sender address
         to: to.join(', '), // Join the array into a comma-separated string
         subject,
         text,  // Plain text version of the message
@@ -109,8 +112,8 @@ export const notifyFromForm = (formData) => {
 
     // Multiple recipients can be handled with an array of emails
     const recipients = process.env.RECIPIENTS.split(',');
-    const subject = `New Submission from ${fullname} at ${email}`;
-    
+    const subject = `New Submission from ${fullname}`;
+
     // Send the email to all recipients with the HTML version of the message
     sendMail(recipients, subject, messageHtml, messageHtml);
 };
