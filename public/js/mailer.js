@@ -82,32 +82,32 @@ export const notifyFromForm = (formData) => {
 
     // Create a formatted HTML message
     const messageHtml = `
-        <h1>New Submission from <strong>${fullname}</strong> at ${email}</h1>
-        <p><strong>Age:</strong> ${realAge !== null ? realAge : 'Invalid date format'}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Hobbies:</strong> ${hobbies}</p>
-        <p><strong>Favorite Food:</strong> ${favfood}</p>
-        <h2>Responses:</h2>
-        <ul>
-            <li><strong>Like About me:</strong> ${questions.question1}</li>
-            <li><strong>Ideal first date:</strong> ${questions.question2}</li>
-            <li><strong>Perfect Saturday:</strong> ${questions.question3}</li>
-            <li><strong>Describe our vibe:</strong> ${questions.question4}</li>
-            <li><strong>Cheer up strategy:</strong> ${questions.question5}</li>
-            <li><strong>Movie genre:</strong> ${questions.question6}</li>
-        </ul>
-        <h2>Background Check Responses:</h2>
-        <ul>
-            <li><strong>Criminal conviction:</strong> ${questions.hrq1}</li>
-            <li><strong>Recreational drugs:</strong> ${questions.hrq2}</li>
-            <li><strong>Current partners:</strong> ${questions.hrq3}</li>
-            <li><strong>Situationships:</strong> ${questions.hrq4}</li>
-            <li><strong>Kids involved:</strong> ${questions.hrq5}</li>
-            <li><strong>Employment status:</strong> ${questions.hrq6}</li>
-            <li><strong>Family relationships:</strong> ${questions.hrq7}</li>
-            <li><strong>Long-term relationship or fling:</strong> ${questions.hrq8}</li>
-            <li><strong>Feelings about guy/girl friendships:</strong> ${questions.hrq9}</li>
-        </ul>
+      <h1>New Submission from <strong>${fullname}</strong> at ${email}</h1>
+      <p><strong>Age:</strong> ${realAge !== null ? realAge : 'Invalid date format'}</p>
+      <p><strong>Email:</strong> ${email}</p>
+      <p><strong>Hobbies:</strong> ${hobbies || 'No response given'}</p>
+      <p><strong>Favorite Food:</strong> ${favfood || 'No response given'}</p>
+      <h2>Responses:</h2>
+      <ul>
+        <li><strong>Like About me:</strong> ${questions.question1 || 'No response given'}</li>
+        <li><strong>Ideal first date:</strong> ${questions.question2 || 'No response given'}</li>
+        <li><strong>Perfect Saturday:</strong> ${questions.question3 || 'No response given'}</li>
+        <li><strong>Describe our vibe:</strong> ${questions.question4 || 'No response given'}</li>
+        <li><strong>Cheer up strategy:</strong> ${questions.question5 || 'No response given'}</li>
+        <li><strong>Movie genre:</strong> ${questions.question6 || 'No response given'}</li>
+      </ul>
+      <h2>Background Check Responses:</h2>
+      <ul>
+        <li><strong>Criminal conviction:</strong> ${questions.hrq1 || 'No response given'}</li>
+        <li><strong>Recreational drugs:</strong> ${questions.hrq2 || 'No response given'}</li>
+        <li><strong>Current partners:</strong> ${questions.hrq3 || 'No response given'}</li>
+        <li><strong>Situationships:</strong> ${questions.hrq4 || 'No response given'}</li>
+        <li><strong>Kids involved:</strong> ${questions.hrq5 || 'No response given'}</li>
+        <li><strong>Employment status:</strong> ${questions.hrq6 || 'No response given'}</li>
+        <li><strong>Family relationships:</strong> ${questions.hrq7 || 'No response given'}</li>
+        <li><strong>Long-term relationship or fling:</strong> ${questions.hrq8 || 'No response given'}</li>
+        <li><strong>Feelings about guy/girl friendships:</strong> ${questions.hrq9 || 'No response given'}</li>
+      </ul>
     `;
 
     // Multiple recipients can be handled with an array of emails

@@ -17,14 +17,15 @@
 
 <h2> 📝 Table of Contents </h2>
 
-+ [🧐 About ](#-about-)
-+ [🏁 Getting Started ](#-getting-started-)
-  + [Prerequisites](#prerequisites)
-  + [Installing](#installing)
-+ [🚀 Deployment ](#-deployment-)
-+ [⛏️ Built Using ](#️-built-using-)
-+ [✍️ Authors ](#️-authors-)
-+ [🎉 Inspiration ](#-inspiration-)
+- [🧐 About ](#-about-)
+- [🏁 Getting Started ](#-getting-started-)
+  - [Prerequisites](#prerequisites)
+  - [Installing](#installing)
+- [🚀 Deployment ](#-deployment-)
+- [Docker](#docker)
+- [⛏️ Built Using ](#️-built-using-)
+- [✍️ Authors ](#️-authors-)
+- [🎉 Inspiration ](#-inspiration-)
 
 
 ---
@@ -64,14 +65,15 @@ npm i
 touch .env
 ```
 
-- Add These Variables to the `.env` file
+- Add These Variables to the `.env` file ( I'm using proton and gotify here as my two ends but in theroy you'll just need to adjust to what ever using uusing in [`mailer.js`](./public/js/mailer.js) and [`gotify.sh`](./public/js/gotify.js))
 
 ```dotenv title=".env"
-pushoverUserKEy=
-pushoverToken=
-EMAIL_USER=
-EMAIL_PASS=
-RECIPIENTS=     # Make sure to add a `,` between the emails.
+GOTIFY_URL= 
+PROTON_SMTP_USER=
+PROTON_SMTP_TOKEN=
+PROTON_SMTP_SERVER=
+PROTON_SMTP_PORT=
+RECIPIENTS=  # Make sure to add a `,` between the emails.
 ```
 
 ## 🚀 Deployment <a name = "deployment"></a>
@@ -79,9 +81,15 @@ RECIPIENTS=     # Make sure to add a `,` between the emails.
 Afer all is done in the last step. You can test with
 
 ```shell
-npm run dev server.js
+npm run dev 
 ```
-Fill out some infomation and hit submit and it should send a push notification and email.
+Fill out some information and hit submit and it should send a push notification and email.
+
+## Docker
+
+I've also provided a docker file for this if you like to use docker.
+
+Just change what you need and build.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Express](https://expressjs.com/) - Server Framework
