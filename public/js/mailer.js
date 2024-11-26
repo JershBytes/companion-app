@@ -58,7 +58,7 @@ const calculateAge = (dob) => {
 // Function to send an email to multiple recipients
 export const sendMail = async (to, subject, text, html) => { // Accept an `html` parameter
     const mailOptions = {
-        from: process.env.PROTON_SMTP_USER, // Sender address
+        from: '"process.env.FROM_USER" process.env.PROTON_SMTP_USER', // Sender address
         to: to.join(', '), // Join the array into a comma-separated string
         subject,
         text,  // Plain text version of the message
