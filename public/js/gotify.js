@@ -79,23 +79,23 @@ export const notifyFromForm = async (formData) => {
       Favorite Food: ${favfood || 'Not provided'}
 
       Responses:
-      - Like About me: ${questions?.question1 || 'No response given'}
-      - Ideal first date: ${questions?.question2 || 'No response given'}
-      - Perfect Saturday: ${questions?.question3 || 'No response given'}
-      - Describe our vibe: ${questions?.question4 || 'No response given'}
-      - Cheer up strategy: ${questions?.question5 || 'No response given'}
-      - Movie genre: ${questions?.question6 || 'No response given'}
+      - Like About me: ${questions?.question1}
+      - Ideal first date: ${questions?.question2}
+      - Perfect Saturday: ${questions?.question3}
+      - Describe our vibe: ${questions?.question4}
+      - Cheer up strategy: ${questions?.question5}
+      - Movie genre: ${questions?.question6}
 
       Background Check Responses:
-      - Criminal conviction: ${questions?.hrq1 || 'No response given'}
-      - Recreational drugs: ${questions?.hrq2 || 'No response given'}
-      - Current partners: ${questions?.hrq3 || 'No response given'}
-      - Situationships: ${questions?.hrq4 || 'No response given'}
-      - Kids involved: ${questions?.hrq5 || 'No response given'}
-      - Employment status: ${questions?.hrq6 || 'No response given'}
-      - Family relationships: ${questions?.hrq7 || 'No response given'}
-      - Long-term relationship or fling: ${questions?.hrq8 || 'No response given'}
-      - Feelings about guy/girl relationships: ${questions?.hrq9 || 'No response given'}
+      - Criminal conviction: ${questions?.hrq1}
+      - Recreational drugs: ${questions?.hrq2}
+      - Current partners: ${questions?.hrq3}
+      - Situationships: ${questions?.hrq4}
+      - Kids involved: ${questions?.hrq5}
+      - Employment status: ${questions?.hrq6}
+      - Family relationships: ${questions?.hrq7}
+      - Long-term relationship or fling: ${questions?.hrq8}
+      - Feelings about guy/girl relationships: ${questions?.hrq9}
     `;
 
     // Send the formatted message to Gotify and return the response
