@@ -21,21 +21,37 @@ export const sendGotifyNotification = async (message) => {
   }
 };
 
+// Function to calculate age from date of birth
+const calculateAge = (dob) => {
+  const birthDate = new Date(dob);
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+
+  if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  return age;
+};
+
 // Function to create a formatted message from form data and send notification
 export const notifyFromForm = async (formData) => {
   try {
     // Destructure formData into individual variables
-    const { fullname, email, age, hobbies, favfood, questions } = formData;
+    const { fullname, email, dob, hobbies, favfood, questions } = formData;
 
     // Validate required fields
-    if (!fullname || !email) {
-      throw new Error('Missing required fields: fullname or email');
+    if (!fullname || !email || !dob) {
+      throw new Error('Missing required fields: fullname, email, or dob');
     }
+
+    // Calculate age from date of birth
+    const age = calculateAge(dob);
 
     // Construct the message using dedent
     const message = dedent`
       New Submission from ${fullname} (${email})
-      Age: ${age || 'Not provided'}
+      Age: ${age} (${dob})
       Hobbies: ${hobbies || 'Not provided'}
       Favorite Food: ${favfood || 'Not provided'}
 
