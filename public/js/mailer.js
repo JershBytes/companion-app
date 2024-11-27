@@ -59,7 +59,7 @@ const calculateAge = (dob) => {
 export const sendMail = async (to, subject, text, html) => { // Accept an `html` parameter
     const mailOptions = {
         from: process.env.PROTON_SMTP_USER, // Sender address
-        to: to.join(', '), // Join the array into a comma-separated string
+        to: process.env.RECIPIENTS, // List of recipients
         subject,
         text,  // Plain text version of the message
         html,  // HTML version of the message
@@ -111,8 +111,8 @@ export const notifyFromForm = (formData) => {
     `;
 
     // Multiple recipients can be handled with an array of emails
-    const recipients = process.env.RECIPIENTS.split(',');
     const subject = `New Submission from ${fullname}`;
+    const recipients = process.env.RECIPIENTS
 
     // Send the email to all recipients with the HTML version of the message
     sendMail(recipients, subject, messageHtml, messageHtml);
